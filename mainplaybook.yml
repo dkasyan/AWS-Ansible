@@ -2,9 +2,13 @@
 
 - name: AWS EC2
   hosts: localhost
+  collections:
+    - community.aws
   gather_facts: true
-  
-  roles:
-    - create_VPC_net
+  tasks:
+    - community.aws.aws_region_info:
+
+ # roles:
+ #   - create_VPC
 
   

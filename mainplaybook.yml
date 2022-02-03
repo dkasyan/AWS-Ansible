@@ -2,6 +2,8 @@
 
 - name: AWS EC2
   hosts: localhost
+  vars:
+    - vault.yml
   collections:
     - community.aws
   gather_facts: true

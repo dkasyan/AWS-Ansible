@@ -19,4 +19,6 @@
   roles:
     - create_VPC
     - create_VPC_route_table
+    - create_VPC_net
+
   

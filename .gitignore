@@ -4,5 +4,5 @@
 /share
 /include
 pyvenv.cfg
-!*/vault.yml
+group_vars/all/vault.yml
 vault_kasyan_me.yml

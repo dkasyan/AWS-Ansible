@@ -15,11 +15,14 @@
     subNetCidrBlock: '10.0.1.0/24'
     port22CidrBlock: '0.0.0.0/0'
     destinationCidrBlock: '0.0.0.0/0'
-    state: 'present'
+    state: 'absent'
   roles:
-    - create_VPC
-    - create_VPC_subnet
-    - create_VPC_igw
-    - create_VPC_sec_group
     - create_VPC_route_table
+    - create_VPC_subnet
     - create_VPC_net
+
+
+
+
+   
+   

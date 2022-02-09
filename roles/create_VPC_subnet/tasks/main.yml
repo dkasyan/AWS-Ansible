@@ -1,17 +1,16 @@
-- name: Create a subnet
-  ec2_vpc_subnet: 
-    aws_access_key: "{{ aws_id }} "
-    aws_secret_key: "{{ aws_key }}"
-    region: "{{ aws_region }}"
-    state: present
-    cidr: "{{ cidr_ip_subnet }}"
-    vpc_id: "{{ ansible_VPC_net.vpc.id }}"
-    map_public: yes
-    tags: 
-      Name: public_subnet
-    register: create_VPC_subnet
-  
-- name: Display the ansibleVPC output
-  debug:
-    var: create_VPC_subnet
-    
+---
+  - name: create ec2 vpc subnet
+    # create the subnet for the vpc with a cidr block
+    ec2_vpc_subnet:
+      aws_access_key: "{{ aws_access_key }}"
+      aws_secret_key: "{{ aws_secret_key }}"
+      vpc_id: "{{ ec2_vpc_net_result.vpc.id }}"
+      region: "{{ region }}"
+      az: "{{ zone }}"      # az is the availability zone
+      state: "{{ state }}"
+      cidr: "{{ subNetCidrBlock }}"
+      # enable public ip
+      map_public: yes
+      resource_tags:
+        Name: "{{ subnet_name }}"
+    register: subnet_result

@@ -14,31 +14,5 @@
       tenancy: default
       state: "{{ state }}"
     register: ec2_vpc_net_result
-  - name: create ec2 vpc internet gateway       
-    # create an internet gateway for the vpc
-    ec2_vpc_igw:
-      aws_access_key: "{{ aws_access_key }}"
-      aws_secret_key: "{{ aws_secret_key }}"
-      vpc_id: "{{ ec2_vpc_net_result.vpc.id }}"
-      region: "{{ region }}"
-      state: "{{ state }}" 
-      tags:
-        Name: "{{ igw_name }}"
-    register: igw_result
-  - name: create ec2 vpc subnet
-    # create the subnet for the vpc with a cidr block
-    ec2_vpc_subnet:
-      aws_access_key: "{{ aws_access_key }}"
-      aws_secret_key: "{{ aws_secret_key }}"
-      vpc_id: "{{ ec2_vpc_net_result.vpc.id }}"
-      region: "{{ region }}"
-      az: "{{ zone }}"      # az is the availability zone
-      state: "{{ state }}"
-      cidr: "{{ subNetCidrBlock }}"
-      # enable public ip
-      map_public: yes
-      resource_tags:
-        Name: "{{ subnet_name }}"
-    register: subnet_result
 
   

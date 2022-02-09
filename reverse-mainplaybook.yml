@@ -23,5 +23,3 @@
     - create_VPC_sec_group
     - create_VPC_route_table
     - create_VPC_net
-
-  

@@ -17,12 +17,12 @@
     destinationCidrBlock: '0.0.0.0/0'
     state: 'present'
   roles:
-    #- create_VPC
-    #- create_VPC_subnet
-    #- create_VPC_igw
+    - create_VPC
+    - create_VPC_subnet
+    - create_VPC_igw
     #- create_VPC_sec_group
     #- create_VPC_route_table
     #- create_VPC_net
-    - create_EC2
+    #- create_EC2
 
   

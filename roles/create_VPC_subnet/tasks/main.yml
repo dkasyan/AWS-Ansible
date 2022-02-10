@@ -14,3 +14,5 @@
       resource_tags:
         Name: "{{ subnet_name }}"
     register: subnet_result
+
+    # Create single subnet instance

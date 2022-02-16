@@ -9,13 +9,13 @@
       state: "{{ state }}"
       tags:
         Name: "{{ route_table_name }}"
-      subnets: [ "{{ subnet_result.subnet.id }}" ]
-      
+      subnets: [ "{{ subnet_result.subnet.id }}" ]      
       # create routes
       routes:
         - dest: "{{ destinationCidrBlock }}" 
           gateway_id: "{{ igw_result.gateway_id }}"
     register: public_route_table
+    
   - name: print out new vpc, subnet id, and security group for vpc
     # print out new subnet id and security group
     debug:

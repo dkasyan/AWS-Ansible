@@ -21,8 +21,8 @@
     - create_VPC_subnet
     - create_VPC_igw
     - create_VPC_sec_group
-    #- create_VPC_route_table
-    #- create_VPC_net
+    - create_VPC_route_table
+    - create_network_ACLs
     #- create_EC2
 
   

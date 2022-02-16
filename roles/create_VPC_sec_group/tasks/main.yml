@@ -18,4 +18,4 @@
         cidr_ip: "{{ port22CidrBlock }}"
         rule_desc: allow all on port 22
     register: security_group_results
-#Tutaj uzupelnic
+#Tutaj uzupelnic dodać dodatkowe porty 

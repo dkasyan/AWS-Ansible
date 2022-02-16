@@ -15,4 +15,4 @@
         Name: "{{ subnet_name }}"
     register: subnet_result
 
-    # Create single subnet instance
+    # Create multiple subnet instance
